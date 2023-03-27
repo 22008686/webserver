@@ -59,7 +59,8 @@ print("my webserver is running...")
 httpd.serve_forever() 
 ```
 ## OUTPUT:
-![ex 01](https://user-images.githubusercontent.com/118916413/227980703-d43050ea-4a50-4ff1-bc46-a3b1097f9393.png)
+![Screenshot (3)](https://user-images.githubusercontent.com/118916413/227981598-51246faf-9e7c-4f83-aac2-4feafc0e2515.png)
+
 
 ## RESULT:
 The program is executed succesfully
