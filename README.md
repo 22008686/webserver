@@ -27,40 +27,51 @@ Serving the HTML pages.
 Testing the webserver
 
 ## PROGRAM:
-```
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<!DOCTYPE html>
+
+```python
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+content='''
+<!doctype html>
 <html>
 <head>
-<title>My webserver</title>
+<title> My Web Server</title>
 </head>
 <body>
-<h1><u>Top five web application development frameworks.</u><h1>
-<ul>
-<li>Django.</li>
-<li>Angular</li>
-<li>ASP.NET.</li>
-<li>Laravel</li>
-<li>Meteor</li>
+<h1>Top Five Web Application Development Frameworks</h1>
+<h2>1.Django</h2>
+<h2>2. MEAN Stack</h2>
+<h2>3. React </h2>
+<h2>4.MERN</h2>
+<h2>5.ANGULAR</h2>
 </body>
 </html>
+'''
 
-class myhandler(BaseHTTPRequestHandler):
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',80)
-httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
-httpd.serve_forever() 
-```
-## OUTPUT:
-![Screenshot (3)](https://user-images.githubusercontent.com/118916413/227981598-51246faf-9e7c-4f83-aac2-4feafc0e2515.png)
 
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+```
+
+## OUTPUT:
+
+## Server Output:
+
+![Screenshot from 2023-03-30 09-15-48](https://user-images.githubusercontent.com/118916413/228723791-96f8e240-1725-41dd-b780-ebbfb65a3138.png)
+
+## client Output:
+
+![Screenshot from 2023-03-30 09-15-12](https://user-images.githubusercontent.com/118916413/228723839-41c0d7d5-a8c4-4280-b561-5b677ce76905.png)
 
 ## RESULT:
-The program is executed succesfully
+
+The program is executed succesfully.
